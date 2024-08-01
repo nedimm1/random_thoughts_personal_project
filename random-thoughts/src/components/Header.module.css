@@ -1,0 +1,32 @@
+.headerContainer {
+  background-color: #282c34;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.siteName {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navLinkActive {
+  font-weight: bold;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+}
