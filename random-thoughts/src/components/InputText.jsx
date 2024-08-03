@@ -2,9 +2,16 @@ import { useContext, useState } from "react";
 import { MyContext } from "./MyContext";
 
 function InputText() {
-  const { text, setText } = useContext(MyContext);
+  // Destructure the context values once
+  const { text, setText, canShow, sCanShow, thought, setThought } =
+    useContext(MyContext);
 
-  const { canShow, sCanShow } = useContext(MyContext);
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const currentTime = `posted at: ${hours.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")}`;
 
   const [inputValue, setInputValue] = useState("");
 
@@ -12,9 +19,18 @@ function InputText() {
     setInputValue(e.target.value);
   }
 
+  const addThought = (newThought) => {
+    setThought((prevState) => [...prevState, newThought]);
+  };
+
   function handleSubmit() {
+    const newThought = {
+      text: inputValue,
+      postedTime: currentTime,
+    };
     setText(inputValue);
     setInputValue("");
+    addThought(newThought);
     sCanShow(false);
   }
 

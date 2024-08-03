@@ -8,10 +8,20 @@ export const MyProvider = ({ children }) => {
   const [text, setText] = useState("");
   const [thought, setThought] = useState([]);
   const [canShow, sCanShow] = useState(false);
+  const [isFavorite, sIsFavorite] = useState(false);
 
   return (
     <MyContext.Provider
-      value={{ text, setText, thought, setThought, canShow, sCanShow }}
+      value={{
+        text,
+        setText,
+        thought,
+        setThought,
+        canShow,
+        sCanShow,
+        isFavorite,
+        sIsFavorite,
+      }}
     >
       {children}
     </MyContext.Provider>
