@@ -3,7 +3,7 @@ import { MyContext } from "./MyContext";
 
 function InputText() {
   // Destructure the context values once
-  const { text, setText, canShow, sCanShow, thought, setThought } =
+  const { setText, sCanShow, thought, setThought } =
     useContext(MyContext);
 
   const now = new Date();
