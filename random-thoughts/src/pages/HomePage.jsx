@@ -1,3 +1,4 @@
+// HomePage.jsx
 import InputText from "../components/InputText";
 import { useContext } from "react";
 import { MyContext } from "../components/MyContext";

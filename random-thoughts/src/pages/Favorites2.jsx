@@ -1,3 +1,4 @@
+// Favorites2.jsx
 import { useContext } from "react";
 import { MyContext } from "../components/MyContext";
 
