@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { MyContext } from "./MyContext";
+import styles from "./InputText.module.css";
 
 function InputText() {
   // Destructure the context values once
-  const { setText, sCanShow, thought, setThought } =
-    useContext(MyContext);
+  const { setText, sCanShow, thought, setThought } = useContext(MyContext);
 
   const now = new Date();
   const hours = now.getHours();
@@ -37,8 +37,12 @@ function InputText() {
   }
 
   return (
-    <div>
-      <input value={inputValue} onChange={handleText} />
+    <div className={styles.container}>
+      <input 
+        value={inputValue} 
+        onChange={handleText} 
+        placeholder="Write your thought here..." 
+      />
       <button onClick={handleSubmit}>Submit</button>
     </div>
   );

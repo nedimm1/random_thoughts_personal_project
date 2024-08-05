@@ -1,0 +1,72 @@
+/* RandomThoughts.module.css */
+.container {
+  padding: 20px;
+  background-color: var(--background-color, #f9f9f9);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.heading {
+  font-size: 24px;
+  color: var(--text-color, #333);
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: var(--button-background, #6200ea);
+  color: var(--button-text, #fff);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.button:hover {
+  background-color: var(--button-background-hover, #3700b3);
+}
+
+.thoughtItem {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.thoughtText {
+  font-size: 18px;
+  color: var(--text-color, #444);
+}
+
+.postedTime {
+  font-size: 12px;
+  color: #888;
+}
+
+.favoriteButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.favoriteButton:hover {
+  transform: scale(1.2);
+}
+
+.favoriteButton.active {
+  color: #ff1744;
+}
+
+.favoriteButton.inactive {
+  color: #ccc;
+}
