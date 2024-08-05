@@ -1,13 +1,23 @@
 import InputText from "../components/InputText";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MyContext } from "../components/MyContext";
 
 function HomePage() {
-  const { canShow, sCanShow } = useContext(MyContext);
-  const { thought, setThought } = useContext(MyContext);
+  const { canShow, sCanShow, thought, setThought } = useContext(MyContext);
 
   function show() {
     sCanShow(true);
+  }
+
+  function toggleFavorite(index) {
+    setThought((prevThought) => {
+      return prevThought.map((item, idx) => {
+        if (idx === index) {
+          return { ...item, isFavorite: !item.isFavorite };
+        }
+        return item;
+      });
+    });
   }
 
   return (
@@ -19,6 +29,14 @@ function HomePage() {
         <div key={index}>
           <p>{item.text}</p>
           <small>{item.postedTime}</small>
+          <button
+            onClick={() => {
+              toggleFavorite(index);
+              console.log(item.isFavorite);
+            }}
+          >
+            ❤
+          </button>
         </div>
       ))}
     </div>

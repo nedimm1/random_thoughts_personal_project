@@ -27,11 +27,13 @@ function InputText() {
     const newThought = {
       text: inputValue,
       postedTime: currentTime,
+      isFavorite: false,
     };
     setText(inputValue);
     setInputValue("");
     addThought(newThought);
     sCanShow(false);
+    console.log(thought);
   }
 
   return (
