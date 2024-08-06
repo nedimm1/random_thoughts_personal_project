@@ -6,3 +6,53 @@
   margin-top: 50px; /* Adjust this value as needed */
   text-align: center;
 }
+
+/* General button styles */
+.button {
+  color: black;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Styles for the theme toggle button */
+.themeButton {
+  background-color: #007bff; /* Blue color for the theme toggle button */
+  color: black;
+  border-color: #007bff;
+}
+
+.themeButton:hover {
+  background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+/* Styles for active state */
+.button.active {
+  background-color: #007bff;
+  color: black;
+  border-color: #007bff;
+}
+
+/* Specific styles for active language buttons */
+.button.activeEnglish {
+  background-color: #007bff;
+  color: black;
+}
+
+.button.activeSerbian {
+  background-color: #28a745;
+  color: black;
+}
+
+.button.activeArabic {
+  background-color: #dc3545;
+  color: black;
+}

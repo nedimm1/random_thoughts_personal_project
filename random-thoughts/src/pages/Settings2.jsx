@@ -4,11 +4,11 @@ import { MyContext } from "../components/MyContext";
 import styles from "./Settings.module.css";
 
 const Settings2 = ({ toggleDarkMode }) => {
-  const [turrnedOn, sTurrnedOn] = useState(false);
+  const [turnedOn, setTurnedOn] = useState(false);
   const { language, changeLanguage } = useContext(MyContext);
 
   function handleToggle() {
-    sTurrnedOn(!turrnedOn);
+    setTurnedOn(!turnedOn);
     toggleDarkMode();
   }
 
@@ -21,14 +21,47 @@ const Settings2 = ({ toggleDarkMode }) => {
           ? "Podesavanja"
           : "إعدادات"}
       </h1>
-      <button onClick={handleToggle}>
-        {turrnedOn ? "Turn on Light Mode" : "Turn on Dark Mode"}
+      <button
+        className={`${styles.button} ${styles.themeButton} ${
+          turnedOn ? styles.active : ""
+        }`}
+        onClick={handleToggle}
+      >
+        {turnedOn ? "Turn on Light Mode" : "Turn on Dark Mode"}
       </button>
 
       <div>
-        <button onClick={() => changeLanguage("en")}>English</button>
-        <button onClick={() => changeLanguage("sr")}>Serbian</button>
-        <button onClick={() => changeLanguage("ar")}>Arabic</button>
+        <h2>
+          {language === "en"
+            ? "Language Settings"
+            : language === "sr"
+            ? "Jezici"
+            : "اللغات"}
+        </h2>
+        <button
+          className={`${styles.button} ${
+            language === "en" ? styles.activeEnglish : ""
+          }`}
+          onClick={() => changeLanguage("en")}
+        >
+          English
+        </button>
+        <button
+          className={`${styles.button} ${
+            language === "sr" ? styles.activeSerbian : ""
+          }`}
+          onClick={() => changeLanguage("sr")}
+        >
+          Serbian
+        </button>
+        <button
+          className={`${styles.button} ${
+            language === "ar" ? styles.activeArabic : ""
+          }`}
+          onClick={() => changeLanguage("ar")}
+        >
+          Arabic
+        </button>
       </div>
     </div>
   );
