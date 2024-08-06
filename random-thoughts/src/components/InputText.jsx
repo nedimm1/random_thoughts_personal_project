@@ -4,7 +4,8 @@ import styles from "./InputText.module.css";
 
 function InputText() {
   // Destructure the context values once
-  const { setText, sCanShow, thought, setThought } = useContext(MyContext);
+  const { setText, sCanShow, thought, setThought, language } =
+    useContext(MyContext);
 
   const now = new Date();
   const hours = now.getHours();
@@ -38,12 +39,10 @@ function InputText() {
 
   return (
     <div className={styles.container}>
-      <input 
-        value={inputValue} 
-        onChange={handleText} 
-        placeholder="Write your thought here..." 
-      />
-      <button onClick={handleSubmit}>Submit</button>
+      <input value={inputValue} onChange={handleText} />
+      <button onClick={handleSubmit}>
+        {language === "en" ? "Submit" : language === "sr" ? "Postavi" : "قدم"}
+      </button>
     </div>
   );
 }

@@ -5,7 +5,8 @@ import { MyContext } from "../components/MyContext";
 import styles from "./Thoughts.module.css";
 
 function HomePage() {
-  const { canShow, sCanShow, thought, setThought } = useContext(MyContext);
+  const { canShow, sCanShow, thought, setThought, language } =
+    useContext(MyContext);
 
   function show() {
     sCanShow(true);
@@ -24,7 +25,14 @@ function HomePage() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>Write your Random thought here</h1>
+      <h1 className={styles.heading}>
+        {" "}
+        {language === "en"
+          ? "Write your Random Thought here"
+          : language === "sr"
+          ? "Zapisite svoje Random Misli ovde"
+          : "اكتب أفكارك العشوائية هنا"}
+      </h1>
       <button className={styles.button} onClick={show}>
         +
       </button>

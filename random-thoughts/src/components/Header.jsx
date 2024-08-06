@@ -1,10 +1,19 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
+import { useContext } from "react";
+import { MyContext } from "../components/MyContext";
 
 const Header = () => {
+  const { language } = useContext(MyContext);
   return (
     <header className={styles.headerContainer}>
-      <h1 className={styles.siteName}>Random Thoughts</h1>
+      <h1 className={styles.siteName}>
+        {language === "en"
+          ? "Random Thoughts"
+          : language === "sr"
+          ? "Random Misli"
+          : "أفكار عشوائية"}
+      </h1>
       <nav className={styles.nav}>
         <NavLink
           to="/"
@@ -12,7 +21,11 @@ const Header = () => {
             isActive ? styles.navLinkActive : styles.navLink
           }
         >
-          Home
+          {language === "en"
+            ? "Home"
+            : language === "sr"
+            ? "Glavna stranica"
+            : "الصفحة الرئيسية"}
         </NavLink>
         <NavLink
           to="/favorites"
@@ -20,7 +33,11 @@ const Header = () => {
             isActive ? styles.navLinkActive : styles.navLink
           }
         >
-          Favorites
+          {language === "en"
+            ? "Favorites"
+            : language === "sr"
+            ? "Omiljeni"
+            : "المفضلة"}
         </NavLink>
         <NavLink
           to="/settings"
@@ -28,7 +45,11 @@ const Header = () => {
             isActive ? styles.navLinkActive : styles.navLink
           }
         >
-          Settings
+          {language === "en"
+            ? "Settings"
+            : language === "sr"
+            ? "Podesavanja"
+            : "إعدادات"}
         </NavLink>
       </nav>
     </header>

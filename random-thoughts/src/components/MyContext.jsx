@@ -8,7 +8,11 @@ export const MyProvider = ({ children }) => {
   const [text, setText] = useState("");
   const [thought, setThought] = useState([]);
   const [canShow, sCanShow] = useState(false);
-  const [isFavorite, sIsFavorite] = useState(false);
+  const [language, setLanguage] = useState("en");
+
+  const changeLanguage = (lang) => {
+    setLanguage(lang);
+  };
 
   return (
     <MyContext.Provider
@@ -19,8 +23,8 @@ export const MyProvider = ({ children }) => {
         setThought,
         canShow,
         sCanShow,
-        isFavorite,
-        sIsFavorite,
+        language,
+        changeLanguage,
       }}
     >
       {children}
