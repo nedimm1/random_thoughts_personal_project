@@ -24,7 +24,7 @@ function Favorites2() {
         .filter((item) => item.isFavorite)
         .map((item, index) => (
           <div key={index} className={styles.thoughtItem}>
-            <p className={styles.thoughtText}>{item.text}</p>
+            <p style={{ color: "black" }}>{item.text}</p>
             <small className={styles.postedTime}>{item.postedTime}</small>
             <button
               className={`${styles.favoriteButton} ${styles.active}`}
